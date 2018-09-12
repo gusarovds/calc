@@ -23,7 +23,7 @@ export default function calculate(obj, buttonName) {
     }
   }
 
-  if (obj.operation) {
+  if (obj.operation && obj.total && obj.next) {
     return {
       total: operate(obj.total, obj.next, obj.operation),
       next: null,
