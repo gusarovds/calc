@@ -1,8 +1,11 @@
 {
   "scripts": {
-    "dev": "next"
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
   },
   "dependencies": {
+    "big.js": "^5.1.2",
     "next": "^6.1.1",
     "react": "^16.4.2",
     "react-dom": "^16.4.2"
