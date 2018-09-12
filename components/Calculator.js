@@ -2,7 +2,8 @@
 import React from "react";
 import ButtonPanel from "./ButtonPanel";
 import Display from "./Display";
-import calculate from "../logic/calculate";
+import calculate  from "../logic/calculate";
+import setValue  from "../logic/setValue";
 
 
 class Calculator extends React.Component {
@@ -15,8 +16,12 @@ class Calculator extends React.Component {
     };
   }
 
-  handleClick = buttonName => {
-    this.setState(calculate(this.state, buttonName));
+  handleClick = (buttonName, type) => {
+    if (type === "action") {
+        this.setState(calculate(this.state, buttonName));
+    } else {
+        this.setState(setValue(this.state, buttonName));
+    }
   };
 
   render() {

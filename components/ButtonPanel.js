@@ -3,41 +3,41 @@ import Button from './Button';
 
 
 class ButtonPanel extends React.Component {
-  handleClick = buttonName => {
-    this.props.clickHandler(buttonName);
+  handleClick = (buttonName, type) => {
+    this.props.clickHandler(buttonName, type);
   };
 
   render() {
     return (
       <div className="component-button-panel">
         <div>
-          <Button name="AC" clickHandler={this.handleClick} />
-          <Button name="=" clickHandler={this.handleClick} />
+          <Button name="AC" type="action" clickHandler={this.handleClick} />
+          <Button name="=" type="action" clickHandler={this.handleClick} />
         </div>
         <div>
-          <Button name="7" clickHandler={this.handleClick} number />
-          <Button name="8" clickHandler={this.handleClick} number />
-          <Button name="9" clickHandler={this.handleClick} number />
-          <Button name="x" clickHandler={this.handleClick} />
+          <Button name="7" type="input" clickHandler={this.handleClick} number />
+          <Button name="8" type="input" clickHandler={this.handleClick} number />
+          <Button name="9" type="input" clickHandler={this.handleClick} number />
+          <Button name="x" type="action" clickHandler={this.handleClick} />
         </div>
         <div>
-          <Button name="4" clickHandler={this.handleClick} number />
-          <Button name="5" clickHandler={this.handleClick} number />
-          <Button name="6" clickHandler={this.handleClick} number />
-          <Button name="÷" clickHandler={this.handleClick} />
+          <Button name="4" type="input" clickHandler={this.handleClick} number />
+          <Button name="5" type="input" clickHandler={this.handleClick} number />
+          <Button name="6" type="input" clickHandler={this.handleClick} number />
+          <Button name="÷" type="action" clickHandler={this.handleClick} />
         </div>
         <div>
-          <Button name="1" clickHandler={this.handleClick} number />
-          <Button name="2" clickHandler={this.handleClick} number />
-          <Button name="3" clickHandler={this.handleClick} number />
-          <Button name="+" clickHandler={this.handleClick} />
+          <Button name="1" type="input" clickHandler={this.handleClick} number />
+          <Button name="2" type="input" clickHandler={this.handleClick} number />
+          <Button name="3" type="input" clickHandler={this.handleClick} number />
+          <Button name="+" type="action" clickHandler={this.handleClick} />
         </div>
         <div>
-          <Button name="0" clickHandler={this.handleClick} wide number />
-          <Button name="." clickHandler={this.handleClick} number />
-          <Button name="-" clickHandler={this.handleClick} />
+          <Button name="0" type="input" clickHandler={this.handleClick} wide number />
+          <Button name="." type="input" clickHandler={this.handleClick} number />
+          <Button name="-" type="action" clickHandler={this.handleClick} />
         </div>
-	    <style global jsx>{`
+	    <style jsx>{`
 			.component-button-panel {
 			  background-color: #000;
 			  display: flex;

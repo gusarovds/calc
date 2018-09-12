@@ -1,7 +1,5 @@
 import Big from "big.js";
-
 import operate from "./operate";
-import isNumber from "./isNumber";
 
 
 export default function calculate(obj, buttonName) {
@@ -11,38 +9,6 @@ export default function calculate(obj, buttonName) {
       next: null,
       operation: null
     };
-  }
-
-  if (isNumber(buttonName)) {
-    if (buttonName === "0" && obj.next === "0") {
-      return {};
-    }
-    if (obj.operation) {
-      if (obj.next) {
-        return { next: obj.next + buttonName };
-      }
-      return { next: buttonName };
-    }
-    if (obj.next) {
-      return {
-        next: obj.next + buttonName,
-        total: null,
-      };
-    }
-    return {
-      next: buttonName,
-      total: null,
-    };
-  }
-
-  if (buttonName === ".") {
-    if (obj.next) {
-      if (obj.next.includes(".")) {
-        return {};
-      }
-      return { next: obj.next + "." };
-    }
-    return { next: "0." };
   }
 
   if (buttonName === "=") {
